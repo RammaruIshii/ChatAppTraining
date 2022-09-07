@@ -19,8 +19,13 @@ class ChatListViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .rgb(red: 19, green: 39, blue: 69)
+        //タイトルの文字色変更
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationItem.title = "トーク"
+        
     }
 }
 
