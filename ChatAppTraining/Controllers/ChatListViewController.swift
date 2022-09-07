@@ -16,6 +16,11 @@ class ChatListViewController: UIViewController {
         super.viewDidLoad()
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .rgb(red: 19, green: 39, blue: 69)
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 

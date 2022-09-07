@@ -16,6 +16,7 @@
 		CE59C00128C76E780027EAB6 /* ChatAppTrainingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59C00028C76E780027EAB6 /* ChatAppTrainingUITestsLaunchTests.swift */; };
 		CE59C00E28C771480027EAB6 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59C00D28C771480027EAB6 /* ChatList.storyboard */; };
 		CE59C01028C7719A0027EAB6 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59C00F28C7719A0027EAB6 /* ChatListViewController.swift */; };
+		CE8620BF28C8D5D30092F7C5 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8620BE28C8D5D30092F7C5 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE59C00028C76E780027EAB6 /* ChatAppTrainingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppTrainingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE59C00D28C771480027EAB6 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
 		CE59C00F28C7719A0027EAB6 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		CE8620BE28C8D5D30092F7C5 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		CE59BFD128C76E740027EAB6 = {
 			isa = PBXGroup;
 			children = (
+				CE8620BE28C8D5D30092F7C5 /* UIColor-Extension.swift */,
 				CE59BFDC28C76E740027EAB6 /* ChatAppTraining */,
 				CE59BFF328C76E780027EAB6 /* ChatAppTrainingTests */,
 				CE59BFFD28C76E780027EAB6 /* ChatAppTrainingUITests */,
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */,
+				CE8620BF28C8D5D30092F7C5 /* UIColor-Extension.swift in Sources */,
 				CE59C01028C7719A0027EAB6 /* ChatListViewController.swift in Sources */,
 				CE59BFE028C76E740027EAB6 /* SceneDelegate.swift in Sources */,
 			);
