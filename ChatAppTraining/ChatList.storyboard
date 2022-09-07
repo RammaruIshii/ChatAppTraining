@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="gks-63-8SQ" customClass="ChatListTableViewCell" customModule="ChatAppTraining" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" rowHeight="80" id="gks-63-8SQ" customClass="ChatListTableViewCell" customModule="ChatAppTraining" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gks-63-8SQ" id="LfA-UB-uZ9">
@@ -61,8 +61,8 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a19-PS-yEd">
-                                                    <rect key="frame" x="354" y="5" width="55" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <rect key="frame" x="344" y="5" width="65" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -77,7 +77,7 @@
                                                 <constraint firstItem="a19-PS-yEd" firstAttribute="top" secondItem="LfA-UB-uZ9" secondAttribute="top" constant="5" id="iB2-5c-rvs"/>
                                                 <constraint firstItem="4JP-c7-pzv" firstAttribute="leading" secondItem="LfA-UB-uZ9" secondAttribute="leading" constant="10" id="whk-kP-aab"/>
                                                 <constraint firstAttribute="bottom" secondItem="a19-PS-yEd" secondAttribute="bottom" constant="50" id="yXy-QT-a1Y"/>
-                                                <constraint firstItem="a19-PS-yEd" firstAttribute="leading" secondItem="vQH-Nm-r3G" secondAttribute="trailing" constant="65" id="zbY-gN-c4W"/>
+                                                <constraint firstItem="a19-PS-yEd" firstAttribute="leading" secondItem="vQH-Nm-r3G" secondAttribute="trailing" constant="55" id="zbY-gN-c4W"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
