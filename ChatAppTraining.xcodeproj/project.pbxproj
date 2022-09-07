@@ -108,8 +108,6 @@
 				CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */,
 				CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */,
 				CE59BFE128C76E740027EAB6 /* ViewController.swift */,
-				CE59C00F28C7719A0027EAB6 /* ChatListViewController.swift */,
-				CE59C00D28C771480027EAB6 /* ChatList.storyboard */,
 				CE59BFE328C76E740027EAB6 /* Main.storyboard */,
 				CE59BFE628C76E780027EAB6 /* Assets.xcassets */,
 				CE59BFE828C76E780027EAB6 /* LaunchScreen.storyboard */,
@@ -138,6 +136,7 @@
 		CE8620BA28C8C0C70092F7C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE59C00F28C7719A0027EAB6 /* ChatListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 		CE8620BD28C8C0F00092F7C5 /* Storybords */ = {
 			isa = PBXGroup;
 			children = (
+				CE59C00D28C771480027EAB6 /* ChatList.storyboard */,
 			);
 			path = Storybords;
 			sourceTree = "<group>";
