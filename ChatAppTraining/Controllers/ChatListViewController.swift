@@ -41,6 +41,9 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("タップされた")
+        let storyBoard = UIStoryboard(name: "ChatRoom", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ChatRoomViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
