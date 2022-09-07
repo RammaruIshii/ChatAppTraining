@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */; };
 		CE59BFE028C76E740027EAB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */; };
-		CE59BFE228C76E740027EAB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFE128C76E740027EAB6 /* ViewController.swift */; };
-		CE59BFE528C76E740027EAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59BFE328C76E740027EAB6 /* Main.storyboard */; };
 		CE59BFE728C76E780027EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59BFE628C76E780027EAB6 /* Assets.xcassets */; };
 		CE59BFEA28C76E780027EAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE59BFE828C76E780027EAB6 /* LaunchScreen.storyboard */; };
 		CE59BFF528C76E780027EAB6 /* ChatAppTrainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFF428C76E780027EAB6 /* ChatAppTrainingTests.swift */; };
@@ -41,8 +39,6 @@
 		CE59BFDA28C76E740027EAB6 /* ChatAppTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE59BFE128C76E740027EAB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE59BFE428C76E740027EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE59BFE628C76E780027EAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE59BFE928C76E780027EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE59BFEB28C76E780027EAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,8 +103,6 @@
 				CE8620BA28C8C0C70092F7C5 /* Controllers */,
 				CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */,
 				CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */,
-				CE59BFE128C76E740027EAB6 /* ViewController.swift */,
-				CE59BFE328C76E740027EAB6 /* Main.storyboard */,
 				CE59BFE628C76E780027EAB6 /* Assets.xcassets */,
 				CE59BFE828C76E780027EAB6 /* LaunchScreen.storyboard */,
 				CE59BFEB28C76E780027EAB6 /* Info.plist */,
@@ -256,7 +250,6 @@
 				CE59BFEA28C76E780027EAB6 /* LaunchScreen.storyboard in Resources */,
 				CE59BFE728C76E780027EAB6 /* Assets.xcassets in Resources */,
 				CE59C00E28C771480027EAB6 /* ChatList.storyboard in Resources */,
-				CE59BFE528C76E740027EAB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE59BFE228C76E740027EAB6 /* ViewController.swift in Sources */,
 				CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */,
 				CE59C01028C7719A0027EAB6 /* ChatListViewController.swift in Sources */,
 				CE59BFE028C76E740027EAB6 /* SceneDelegate.swift in Sources */,
@@ -321,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CE59BFE328C76E740027EAB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE59BFE428C76E740027EAB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE59BFE828C76E780027EAB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -459,13 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GHDNFWUS9U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatAppTraining/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,6 +460,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChatAppTraining.ChatAppTraining;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,13 +472,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GHDNFWUS9U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatAppTraining/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,6 +489,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ChatAppTraining.ChatAppTraining;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
