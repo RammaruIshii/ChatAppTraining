@@ -8,14 +8,40 @@
 import UIKit
 
 class ChatInputAccesaryView: UIView {
+    @IBOutlet weak var chatTextView: UITextView!
+    @IBOutlet weak var sendButton: UIButton!
     
 //    カスタムUIViewやUIButtonを作成した時に、initメソッド内で定数や配列の初期化などを行いたい
 //初期化というのは何か値を与えること
     override init(frame: CGRect) {
         super.init(frame: frame)
         nibInit()
-        
+        setUpViews()
+        //テキストビューの大きさとビューの大きさが自動的に変わる
+        autoresizingMask = .flexibleHeight
     }
+    
+    //textView可変にする方法
+    //下記記述
+    //scrolllingのscrolling Enabledのチェックマーク外す
+    override var intrinsicContentSize: CGSize {
+        return .zero
+    }
+    
+    private func setUpViews() {
+        chatTextView.layer.cornerRadius = 15
+        //borderColor定義するときは最後に.cgColor定義
+        chatTextView.layer.borderColor = UIColor.rgb(red: 230, green: 230, blue: 230).cgColor
+        chatTextView.layer.borderWidth = 1
+        
+        sendButton.layer.cornerRadius = 15
+        sendButton.imageView?.contentMode = .scaleAspectFill
+        sendButton.contentHorizontalAlignment = .fill
+        sendButton.contentVerticalAlignment = .fill
+        //初期状態は使えないようにしておきたい
+        sendButton.isEnabled = false
+    }
+
     
     //カスタムビューの作り方。カスタムビューを作ることでUIを使い回すことができる。（xibのファイルをこのViewの上にセットしたいため記述）
     private func nibInit() {

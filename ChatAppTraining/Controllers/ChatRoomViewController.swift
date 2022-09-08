@@ -29,7 +29,8 @@ class ChatRoomViewController: UIViewController {
         chatRoomTableView.backgroundColor = .rgb(red: 118, green: 140, blue: 180)
     }
     
-    //ChatRoomVCには元々inputAccessoryViewというプロパティがあるため、その上にさっきのchatInputAccesaryViewをセットする
+    //ViewControllerには元々inputAccessoryViewというプロパティがあるため、その上にさっきのchatInputAccesaryViewをセットする.
+    //inputAccessoryViewはセットしたViewなどキーボードと一緒に上がったり下がったり簡単に実装できるためおすすめ
     override var inputAccessoryView: UIView? {
         get {
             return chatInputAccesaryView
