@@ -47,6 +47,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="an2-nE-Pet"/>
+                    <connections>
+                        <outlet property="chatRoomTableView" destination="elc-Eh-H1W" id="HGr-ci-9F6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

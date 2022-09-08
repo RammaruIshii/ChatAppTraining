@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="lez-IB-DNO">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="lez-IB-DNO" customClass="ChatRoomTableViewCell" customModule="ChatAppTraining" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="471" height="116"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lez-IB-DNO" id="fwP-0V-KIu">
@@ -23,15 +23,15 @@
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-0r-AvX">
-                        <rect key="frame" x="98" y="4" width="311" height="108"/>
+                        <rect key="frame" x="98" y="4" width="326.5" height="108"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICL-8Y-tMn">
-                        <rect key="frame" x="419" y="81" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="434.5" y="90" width="26.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,6 +48,11 @@
                     <constraint firstItem="XJQ-0r-AvX" firstAttribute="bottom" secondItem="ICL-8Y-tMn" secondAttribute="bottom" constant="10" id="yv7-Rf-2cB"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="ICL-8Y-tMn" id="CNH-bh-xGL"/>
+                <outlet property="messageTextView" destination="XJQ-0r-AvX" id="mca-Ny-JWD"/>
+                <outlet property="userImageView" destination="E6u-Vb-qbt" id="PT6-x4-DVT"/>
+            </connections>
             <point key="canvasLocation" x="299.27536231884062" y="-287.94642857142856"/>
         </tableViewCell>
     </objects>
