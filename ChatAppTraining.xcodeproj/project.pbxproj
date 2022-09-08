@@ -21,6 +21,8 @@
 		CE8620C328C8DB870092F7C5 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8620C228C8DB870092F7C5 /* ChatRoomViewController.swift */; };
 		CEF0943B28C9AF8800239A32 /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF0943A28C9AF8800239A32 /* ChatRoomTableViewCell.xib */; };
 		CEF0943D28C9AFA600239A32 /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0943C28C9AFA600239A32 /* ChatRoomTableViewCell.swift */; };
+		CEF0944228C9D74A00239A32 /* ChatInputAccesaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF0944128C9D74A00239A32 /* ChatInputAccesaryView.xib */; };
+		CEF0944428C9E05200239A32 /* ChatInpuAccesaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0944328C9E05200239A32 /* ChatInpuAccesaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		CE8620C228C8DB870092F7C5 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		CEF0943A28C9AF8800239A32 /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
 		CEF0943C28C9AFA600239A32 /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
+		CEF0944128C9D74A00239A32 /* ChatInputAccesaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccesaryView.xib; sourceTree = "<group>"; };
+		CEF0944328C9E05200239A32 /* ChatInpuAccesaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInpuAccesaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF0944028C9D20F00239A32 /* Extensions */,
-				CEF0943F28C9D20000239A32 /* Cells */,
+				CEF0943F28C9D20000239A32 /* Views */,
 				CEF0943E28C9D1EA00239A32 /* Xibs */,
 				CE59BFDC28C76E740027EAB6 /* ChatAppTraining */,
 				CE59BFF328C76E780027EAB6 /* ChatAppTrainingTests */,
@@ -162,16 +166,18 @@
 			isa = PBXGroup;
 			children = (
 				CEF0943A28C9AF8800239A32 /* ChatRoomTableViewCell.xib */,
+				CEF0944128C9D74A00239A32 /* ChatInputAccesaryView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
 		};
-		CEF0943F28C9D20000239A32 /* Cells */ = {
+		CEF0943F28C9D20000239A32 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CEF0943C28C9AFA600239A32 /* ChatRoomTableViewCell.swift */,
+				CEF0944328C9E05200239A32 /* ChatInpuAccesaryView.swift */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CEF0944028C9D20F00239A32 /* Extensions */ = {
@@ -286,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF0944228C9D74A00239A32 /* ChatInputAccesaryView.xib in Resources */,
 				CEF0943B28C9AF8800239A32 /* ChatRoomTableViewCell.xib in Resources */,
 				CE59BFEA28C76E780027EAB6 /* LaunchScreen.storyboard in Resources */,
 				CE59BFE728C76E780027EAB6 /* Assets.xcassets in Resources */,
@@ -315,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF0944428C9E05200239A32 /* ChatInpuAccesaryView.swift in Sources */,
 				CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */,
 				CE8620BF28C8D5D30092F7C5 /* UIColor-Extension.swift in Sources */,
 				CE8620C328C8DB870092F7C5 /* ChatRoomViewController.swift in Sources */,
