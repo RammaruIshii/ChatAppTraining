@@ -19,7 +19,7 @@ class ChatInputAccesaryView: UIView {
     
     //カスタムビューの作り方。カスタムビューを作ることでUIを使い回すことができる。（xibのファイルをこのViewの上にセットしたいため記述）
     private func nibInit() {
-        let nib = UINib(nibName: "ChatInpuAccesaryView", bundle: nil)
+        let nib = UINib(nibName: "ChatInputAccesaryViewCell", bundle: nil)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
         
         view.frame = self.bounds

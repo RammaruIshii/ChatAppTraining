@@ -10,6 +10,14 @@ import UIKit
 class ChatRoomViewController: UIViewController {
     private let cellId = "cellID"
     
+    //ChatInputAccesaryViewをインスタンスで作るため
+    //ここの書き方
+    private var chatInputAccesaryView: ChatInputAccesaryView = {
+        let view = ChatInputAccesaryView()
+        view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        return view
+    }()
+    
     @IBOutlet weak var chatRoomTableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,6 +27,17 @@ class ChatRoomViewController: UIViewController {
         //cellの登録(ここ記述しないとprivate let cellId = "cellID"で定義したChatRoomTableViewCell表示できない)
         chatRoomTableView.register(UINib(nibName: "ChatRoomTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         chatRoomTableView.backgroundColor = .rgb(red: 118, green: 140, blue: 180)
+    }
+    
+    //ChatRoomVCには元々inputAccessoryViewというプロパティがあるため、その上にさっきのchatInputAccesaryViewをセットする
+    override var inputAccessoryView: UIView? {
+        get {
+            return chatInputAccesaryView
+        }
+    }
+    //上記とセットで記述
+    override var canBecomeFirstResponder: Bool{
+        return true
     }
 }
 
