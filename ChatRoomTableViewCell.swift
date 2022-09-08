@@ -14,6 +14,8 @@ class ChatRoomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //このcellの背景を透明にしてChatromVCの背景を表示させる
+        self.backgroundColor = .clear
         userImageView.layer.cornerRadius = 44
         messageTextView.layer.cornerRadius = 15
     }

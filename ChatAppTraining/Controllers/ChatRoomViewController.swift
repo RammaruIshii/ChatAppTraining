@@ -18,6 +18,7 @@ class ChatRoomViewController: UIViewController {
         chatRoomTableView.dataSource = self
         //cellの登録(ここ記述しないとprivate let cellId = "cellID"で定義したChatRoomTableViewCell表示できない)
         chatRoomTableView.register(UINib(nibName: "ChatRoomTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        chatRoomTableView.backgroundColor = .rgb(red: 118, green: 140, blue: 180)
     }
 }
 
@@ -34,7 +35,8 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     
     //cellの高さを定義するメソッド
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        chatRoomTableView.estimatedRowHeight = 20
+        return UITableView.automaticDimension
     }
     
 }
