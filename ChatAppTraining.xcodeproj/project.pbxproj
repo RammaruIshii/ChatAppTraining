@@ -89,8 +89,9 @@
 		CE59BFD128C76E740027EAB6 = {
 			isa = PBXGroup;
 			children = (
-				CEF0943C28C9AFA600239A32 /* ChatRoomTableViewCell.swift */,
-				CEF0943A28C9AF8800239A32 /* ChatRoomTableViewCell.xib */,
+				CEF0944028C9D20F00239A32 /* Extensions */,
+				CEF0943F28C9D20000239A32 /* Cells */,
+				CEF0943E28C9D1EA00239A32 /* Xibs */,
 				CE59BFDC28C76E740027EAB6 /* ChatAppTraining */,
 				CE59BFF328C76E780027EAB6 /* ChatAppTrainingTests */,
 				CE59BFFD28C76E780027EAB6 /* ChatAppTrainingUITests */,
@@ -113,7 +114,6 @@
 			children = (
 				CE8620BD28C8C0F00092F7C5 /* Storybords */,
 				CE8620BA28C8C0C70092F7C5 /* Controllers */,
-				CE8620BE28C8D5D30092F7C5 /* UIColor-Extension.swift */,
 				CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */,
 				CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */,
 				CE59BFE628C76E780027EAB6 /* Assets.xcassets */,
@@ -156,6 +156,30 @@
 				CE8620C028C8DB290092F7C5 /* ChatRoom.storyboard */,
 			);
 			path = Storybords;
+			sourceTree = "<group>";
+		};
+		CEF0943E28C9D1EA00239A32 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0943A28C9AF8800239A32 /* ChatRoomTableViewCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		CEF0943F28C9D20000239A32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0943C28C9AFA600239A32 /* ChatRoomTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEF0944028C9D20F00239A32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE8620BE28C8D5D30092F7C5 /* UIColor-Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
