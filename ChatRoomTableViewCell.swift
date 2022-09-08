@@ -14,6 +14,8 @@ class ChatRoomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        userImageView.layer.cornerRadius = 44
+        messageTextView.layer.cornerRadius = 15
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
