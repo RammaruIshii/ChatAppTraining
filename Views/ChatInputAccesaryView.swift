@@ -40,6 +40,10 @@ class ChatInputAccesaryView: UIView {
         sendButton.contentVerticalAlignment = .fill
         //初期状態は使えないようにしておきたい
         sendButton.isEnabled = false
+        
+        chatTextView.text = ""
+        //chatTextViewが入力されたか否かを監視したいためdelegateを定義
+        chatTextView.delegate = self
     }
 
     
@@ -59,4 +63,16 @@ class ChatInputAccesaryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension ChatInputAccesaryView: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        print("押せてるよ")
+        if textView.text.isEmpty {
+            sendButton.isEnabled = false
+        } else {
+            sendButton.isEnabled = true
+        }
+    }
 }
