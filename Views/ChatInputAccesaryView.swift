@@ -55,7 +55,6 @@ class ChatInputAccesaryView: UIView {
         chatTextView.delegate = self
     }
 
-    
     //カスタムビューの作り方。カスタムビューを作ることでUIを使い回すことができる。（xibのファイルをこのViewの上にセットしたいため記述）
     private func nibInit() {
         let nib = UINib(nibName: "ChatInputAccesaryViewCell", bundle: nil)
@@ -67,6 +66,11 @@ class ChatInputAccesaryView: UIView {
         self.addSubview(view)
     }
     
+    //chatRoomにてメッセージの表示とテキストの文字を消去する関数
+    func removeText() {
+        chatTextView.text = ""
+        sendButton.isEnabled = false
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

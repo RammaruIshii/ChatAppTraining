@@ -9,6 +9,7 @@ import UIKit
 
 class ChatRoomViewController: UIViewController {
     private let cellId = "cellID"
+    private var massages = [String]()
     
     //ChatInputAccesaryViewをインスタンスで作るため
     //ここの書き方
@@ -49,12 +50,18 @@ class ChatRoomViewController: UIViewController {
 
 extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+//        return 10
+        return massages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatRoomTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-//        cell.backgroundColor = .purple
+//        let cell = chatRoomTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        //chatRoomTableViewへアクセス
+        let cell = chatRoomTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatRoomTableViewCell
+        
+        cell.messageTextView.text = massages[indexPath.row]
+
         return cell
     }
     
@@ -67,6 +74,17 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ChatRoomViewController: ChatInputAccesaryViewDeleate {
     func tappedSendButton(text: String) {
+        //送られてきたメッセージをappendで入れてあげる
+        massages.append(text)
+        //textViewに入力された情報をボタンを押すと消去
+//        chatInputAccesaryView.chatTextView.text = ""
+        
+        //textViewに入力された情報をボタンを押すと消去・空だとボタンが使えない
+        chatInputAccesaryView.removeText()
+        
+        //textViewに入力された情報をCellとして表示させる
+        chatRoomTableView.reloadData()
+
         print(text)
     }
     
