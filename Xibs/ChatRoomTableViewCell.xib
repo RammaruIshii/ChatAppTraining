@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,6 +28,9 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="message" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-0r-AvX">
                         <rect key="frame" x="76" y="25" width="311.5" height="34"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="311.5" id="zWr-XN-0fV"/>
+                        </constraints>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -55,6 +59,7 @@
             <connections>
                 <outlet property="dateLabel" destination="ICL-8Y-tMn" id="CNH-bh-xGL"/>
                 <outlet property="messageTextView" destination="XJQ-0r-AvX" id="mca-Ny-JWD"/>
+                <outlet property="messageTextViewWidthConstraint" destination="zWr-XN-0fV" id="0sR-EU-h4P"/>
                 <outlet property="userImageView" destination="E6u-Vb-qbt" id="PT6-x4-DVT"/>
             </connections>
             <point key="canvasLocation" x="299.27536231884062" y="-287.94642857142856"/>
@@ -63,7 +68,7 @@
     <resources>
         <image name="1" width="284.5" height="284.5"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

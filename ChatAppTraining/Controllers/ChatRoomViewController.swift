@@ -60,7 +60,11 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
         //chatRoomTableViewへアクセス
         let cell = chatRoomTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatRoomTableViewCell
         
-        cell.messageTextView.text = massages[indexPath.row]
+//        cell.messageTextView.text = massages[indexPath.row]
+        
+        cell.messageText = massages[indexPath.row]
+        
+        cell.textLabel?.numberOfLines = 0
 
         return cell
     }
