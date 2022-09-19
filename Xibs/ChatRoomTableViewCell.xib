@@ -13,7 +13,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="lez-IB-DNO" customClass="ChatRoomTableViewCell" customModule="ChatAppTraining" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="471" height="116"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lez-IB-DNO" id="fwP-0V-KIu">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lez-IB-DNO" id="fwP-0V-KIu">
                 <rect key="frame" x="0.0" y="0.0" width="471" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -26,17 +26,17 @@
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="message" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-0r-AvX">
-                        <rect key="frame" x="76" y="25" width="311.5" height="34"/>
+                        <rect key="frame" x="76" y="25" width="300" height="34"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="311.5" id="zWr-XN-0fV"/>
+                            <constraint firstAttribute="width" constant="300" id="zWr-XN-0fV"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICL-8Y-tMn">
-                        <rect key="frame" x="407.5" y="31" width="38.5" height="18"/>
+                        <rect key="frame" x="386" y="41" width="38.5" height="18"/>
                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
@@ -44,22 +44,20 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ICL-8Y-tMn" secondAttribute="trailing" constant="25" id="2eG-5F-i3o"/>
                     <constraint firstItem="E6u-Vb-qbt" firstAttribute="leading" secondItem="fwP-0V-KIu" secondAttribute="leading" constant="5" id="7rK-rd-ETh"/>
+                    <constraint firstItem="ICL-8Y-tMn" firstAttribute="leading" secondItem="XJQ-0r-AvX" secondAttribute="trailing" constant="10" id="Fws-2y-9RW"/>
+                    <constraint firstItem="XJQ-0r-AvX" firstAttribute="bottom" secondItem="ICL-8Y-tMn" secondAttribute="bottom" id="OC8-pg-egC"/>
                     <constraint firstAttribute="bottom" secondItem="E6u-Vb-qbt" secondAttribute="bottom" constant="14" id="Q1K-p8-90Q"/>
-                    <constraint firstItem="ICL-8Y-tMn" firstAttribute="leading" secondItem="XJQ-0r-AvX" secondAttribute="trailing" constant="20" id="Ueb-sy-SfS"/>
+                    <constraint firstItem="XJQ-0r-AvX" firstAttribute="top" secondItem="fwP-0V-KIu" secondAttribute="top" constant="25" id="Q9e-bv-ZOi"/>
                     <constraint firstItem="E6u-Vb-qbt" firstAttribute="top" secondItem="fwP-0V-KIu" secondAttribute="top" constant="14" id="gXt-ah-vDx"/>
                     <constraint firstItem="XJQ-0r-AvX" firstAttribute="leading" secondItem="E6u-Vb-qbt" secondAttribute="trailing" constant="5" id="qNh-yE-b4L"/>
-                    <constraint firstItem="XJQ-0r-AvX" firstAttribute="top" secondItem="fwP-0V-KIu" secondAttribute="top" constant="25" id="v9C-GJ-6cu"/>
-                    <constraint firstAttribute="bottom" secondItem="XJQ-0r-AvX" secondAttribute="bottom" constant="25" id="xoR-T4-T00"/>
-                    <constraint firstItem="XJQ-0r-AvX" firstAttribute="bottom" secondItem="ICL-8Y-tMn" secondAttribute="bottom" constant="10" id="yv7-Rf-2cB"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="dateLabel" destination="ICL-8Y-tMn" id="CNH-bh-xGL"/>
                 <outlet property="messageTextView" destination="XJQ-0r-AvX" id="mca-Ny-JWD"/>
-                <outlet property="messageTextViewWidthConstraint" destination="zWr-XN-0fV" id="0sR-EU-h4P"/>
+                <outlet property="messageTextViewWidthConstraint" destination="zWr-XN-0fV" id="iG5-OE-pfk"/>
                 <outlet property="userImageView" destination="E6u-Vb-qbt" id="PT6-x4-DVT"/>
             </connections>
             <point key="canvasLocation" x="299.27536231884062" y="-287.94642857142856"/>
