@@ -12,9 +12,14 @@ class ChatRoomViewController: UIViewController {
     
     //ChatInputAccesaryViewをインスタンスで作るため
     //ここの書き方
-    private var chatInputAccesaryView: ChatInputAccesaryView = {
+    //Lazyはview.delegate = selfのエラーを消すため
+    private lazy var chatInputAccesaryView: ChatInputAccesaryView = {
         let view = ChatInputAccesaryView()
         view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        
+        //ChatInputAccesaryViewで記述したdelegateをChatInputAccesaryViewをインスタンス化したViewで採用する
+        //ここのselfはChatRoomViewControllerのこと
+        view.delegate = self
         return view
     }()
     
@@ -58,5 +63,12 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
         chatRoomTableView.estimatedRowHeight = 20
         return UITableView.automaticDimension
     }
+}
+
+extension ChatRoomViewController: ChatInputAccesaryViewDeleate {
+    func tappedSendButton(text: String) {
+        print(text)
+    }
+    
     
 }

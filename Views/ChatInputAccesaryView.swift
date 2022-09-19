@@ -7,9 +7,18 @@
 
 import UIKit
 
+//現在、textの中に入力された文字列（値）などはChatInputAccesaryViewの中に保持されている。そこで、この値はChatRomViewのtableViewの中に値を渡したい。そのため、delegateを使ってChatRomViewのtableViewに値を渡す。
+//この型のclassはメモリリークを防ぐためのもの（こういうもの）
+protocol ChatInputAccesaryViewDeleate: class {
+    func tappedSendButton(text: String)
+}
+
 class ChatInputAccesaryView: UIView {
     @IBOutlet weak var chatTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    
+    //メモリーリークを防ぐため
+    weak var delegate: ChatInputAccesaryViewDeleate?
     
 //    カスタムUIViewやUIButtonを作成した時に、initメソッド内で定数や配列の初期化などを行いたい
 //初期化というのは何か値を与えること
@@ -61,6 +70,11 @@ class ChatInputAccesaryView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @IBAction func tappedChatButton(_ sender: Any) {
+        guard let text = chatTextView.text else { return }
+        delegate?.tappedSendButton(text: text)
     }
     
 }
