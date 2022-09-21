@@ -26,6 +26,11 @@ class ChatListViewController: UIViewController {
         
         navigationItem.title = "トーク"
         
+        //起動時signUoVCをかぶせて出す
+        let storyBord = UIStoryboard(name: "SignUp", bundle: nil)
+        let vc = storyBord.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }
 

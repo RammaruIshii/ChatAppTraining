@@ -17,6 +17,14 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileImageButton.layer.cornerRadius = 85
+        //縁の色
+        profileImageButton.layer.borderWidth = 1
+        //UIColorをextensionで拡張させたもの
+        profileImageButton.layer.borderColor = UIColor.rgb(red: 240, green: 240, blue: 240).cgColor
+        
+        registerButton.layer.cornerRadius = 15
     }
 
 }
