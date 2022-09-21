@@ -11,6 +11,7 @@
 		99C4E50249F0CCC4AA56A9B0 /* Pods_ChatAppTraining_ChatAppTrainingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5110B7C72D9F933BAF313416 /* Pods_ChatAppTraining_ChatAppTrainingUITests.framework */; };
 		CD08EBEA85870A6305D3B674 /* Pods_ChatAppTraining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEEE1722E8CB8E8C0948EF5 /* Pods_ChatAppTraining.framework */; };
 		CE0BEFE928DB040F009D7C32 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BEFE828DB040F009D7C32 /* SignUp.storyboard */; };
+		CE0BEFEB28DB050B009D7C32 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BEFEA28DB050B009D7C32 /* SignUpViewController.swift */; };
 		CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */; };
 		CE59BFE028C76E740027EAB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */; };
 		CE59BFE728C76E780027EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE59BFE628C76E780027EAB6 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		B064B1B9FEADDDBFA0EDB213 /* Pods-ChatAppTraining.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTraining.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppTraining/Pods-ChatAppTraining.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F2C8422747F8B0C0E9EA8A /* Pods_ChatAppTrainingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppTrainingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0BEFE828DB040F009D7C32 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		CE0BEFEA28DB050B009D7C32 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE59BFDA28C76E740027EAB6 /* ChatAppTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE59BFDD28C76E740027EAB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE59BFDF28C76E740027EAB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				CE59C00F28C7719A0027EAB6 /* ChatListViewController.swift */,
 				CE8620C228C8DB870092F7C5 /* ChatRoomViewController.swift */,
+				CE0BEFEA28DB050B009D7C32 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			files = (
 				CEF0944428C9E05200239A32 /* ChatInputAccesaryView.swift in Sources */,
 				CE59BFDE28C76E740027EAB6 /* AppDelegate.swift in Sources */,
+				CE0BEFEB28DB050B009D7C32 /* SignUpViewController.swift in Sources */,
 				CE8620BF28C8D5D30092F7C5 /* UIColor-Extension.swift in Sources */,
 				CE8620C328C8DB870092F7C5 /* ChatRoomViewController.swift in Sources */,
 				CE59C01028C7719A0027EAB6 /* ChatListViewController.swift in Sources */,
