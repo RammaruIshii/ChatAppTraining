@@ -55,6 +55,7 @@ class SignUpViewController: UIViewController {
         //email,passwordをAuthに保存
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
@@ -62,6 +63,27 @@ class SignUpViewController: UIViewController {
                 return
             }
             print("認証に成功しました")
+            
+            //firestore(データベース)に保存できるように記述
+            guard let uid = authResult?.user.uid else { return }
+            
+            //setDateへ渡す変数（辞書型という決まり）
+            let dogData = [
+                "email": email,
+                "username": username,
+                //作成した日時
+                "createdAt": Timestamp()
+            ]
+            
+            //uidを記述
+            Firestore.firestore().collection("users").document(uid).setData(dogData) {(error) in
+                if let error = error {
+                    print("データベースへ情報の保存に失敗しました.\(error)")
+                    return
+                }
+                print("データベースへ情報の保存に成功しました。")
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
