@@ -28,6 +28,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedProfileImageButton:" destination="YaX-2F-bYe" eventType="touchUpInside" id="ZpF-37-RGC"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Q5F-EM-czM">
                                 <rect key="frame" x="45" y="277" width="300" height="250"/>

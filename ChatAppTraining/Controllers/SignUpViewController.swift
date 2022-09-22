@@ -26,5 +26,35 @@ class SignUpViewController: UIViewController {
         
         registerButton.layer.cornerRadius = 15
     }
+    
+    @IBAction func tappedProfileImageButton(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+}
 
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //editedImageは大きさとか高さ変えた写真を受け取る
+        if let editImage = info[.editedImage] as? UIImage {
+            profileImageButton.setImage(editImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            //originalImageは何も変更を加えないそのままの写真を受け取る
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            profileImageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        profileImageButton.setTitle("", for: .normal)
+        //当該ボタン内に画像を収める
+        profileImageButton.imageView?.contentMode = .scaleAspectFit
+        //UIButtonのサイズまで拡大する
+        profileImageButton.contentHorizontalAlignment = .fill
+        profileImageButton.contentVerticalAlignment = .fill
+        //当該ボタン内(領域内)に画像を収める
+        profileImageButton.clipsToBounds = true
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
