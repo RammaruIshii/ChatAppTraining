@@ -25,6 +25,16 @@ class SignUpViewController: UIViewController {
         profileImageButton.layer.borderColor = UIColor.rgb(red: 240, green: 240, blue: 240).cgColor
         
         registerButton.layer.cornerRadius = 15
+        
+        //Textfieldの値を渡すためにDelegate
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        usernameTextField.delegate = self
+        
+        //ボタンの初期状態は使えない
+        registerButton.isEnabled = false
+        registerButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
+        
     }
     
     @IBAction func tappedProfileImageButton(_ sender: Any) {
@@ -32,6 +42,27 @@ class SignUpViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         self.present(imagePickerController, animated: true, completion: nil)
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    //ここでTextFieldの値を受け取る
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        print("textField.text:", textField.text)
+        //各TextFieldがnil(空白)だったらfalseを返す == 実質false
+        let emailIsEmpty = emailTextField.text?.isEmpty ?? false
+        let passwordIsEmpty = passwordTextField.text?.isEmpty ?? false
+        let usernameIsEmpty = usernameTextField.text?.isEmpty ?? false
+        
+        if emailIsEmpty || passwordIsEmpty || usernameIsEmpty {
+            registerButton.isEnabled = false
+            registerButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
+            //全てのTextFieldに値が入っていたら
+        } else {
+            registerButton.isEnabled = true
+            registerButton.backgroundColor = .rgb(red: 100, green: 185, blue: 100)
+        }
+        
     }
 }
 
