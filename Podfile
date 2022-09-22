@@ -7,6 +7,9 @@ target 'ChatAppTraining' do
 
   # Pods for ChatAppTraining
   pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
 
   target 'ChatAppTrainingTests' do
     inherit! :search_paths

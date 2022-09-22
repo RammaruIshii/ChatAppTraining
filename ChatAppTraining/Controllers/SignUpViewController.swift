@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var profileImageButton: UIButton!
@@ -17,6 +20,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //コードでIBAction練習
+        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         
         profileImageButton.layer.cornerRadius = 85
         //縁の色
@@ -43,12 +49,26 @@ class SignUpViewController: UIViewController {
         imagePickerController.allowsEditing = true
         self.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    //コードでIBAction練習
+    @objc private func tappedRegisterButton() {
+        //email,passwordをAuthに保存
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                print("認証に失敗しました")
+                return
+            }
+            print("認証に成功しました")
+        }
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
     //ここでTextFieldの値を受け取る
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print("textField.text:", textField.text)
         //各TextFieldがnil(空白)だったらfalseを返す == 実質false
         let emailIsEmpty = emailTextField.text?.isEmpty ?? false
         let passwordIsEmpty = passwordTextField.text?.isEmpty ?? false
