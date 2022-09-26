@@ -33,11 +33,17 @@ class ChatListViewController: UIViewController {
         //起動時signUoVCをかぶせて出す
         let storyBord = UIStoryboard(name: "SignUp", bundle: nil)
         let vc = storyBord.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
         
+        //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくい
+//        fetchUserInfoFromFireStore()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchUserInfoFromFireStore()
-        
     }
     
     private func fetchUserInfoFromFireStore() {

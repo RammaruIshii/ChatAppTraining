@@ -69,7 +69,7 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            print("FireStorageへの情報の保存に成功しました。")
+//            print("FireStorageへの情報の保存に成功しました。")
             storageRef.downloadURL { url, error in
                 if let error = error {
                     print("FireStorageからのダウンロードに失敗しました。\(error)")
@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController {
                 print("認証に失敗しました")
                 return
             }
-            print("認証に成功しました")
+//            print("認証に成功しました")
             
             //firestore(データベース)に保存できるように記述
             guard let uid = authResult?.user.uid else { return }
