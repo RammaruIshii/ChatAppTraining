@@ -79,13 +79,16 @@ class SignUpViewController: UIViewController {
                 //urlをstringに変換
                 guard let urlString = url?.absoluteString else { return }
                 print("urlString:",urlString)
+                //取得した画像のURL情報をcreateUserToFirestore(profileImageUrl: String)へ渡す
+                self.createUserToFirestore(profileImageUrl: urlString)
             }
         }
 
     }
     
     //FireStoredへ認証が通過したユーザー情報を保存
-    private func createUserToFirestore() {
+    //加えて、取得した画像のURLの情報を受け取るために引数にprofileImageUrlをセット
+    private func createUserToFirestore(profileImageUrl: String) {
         //email,passwordをAuthに保存
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -106,7 +109,9 @@ class SignUpViewController: UIViewController {
                 "email": email,
                 "username": username,
                 //作成した日時
-                "createdAt": Timestamp()
+                "createdAt": Timestamp(),
+                //取得した画像URL
+                "profileImageUrl": profileImageUrl
             ]
             
             //uidを記述
