@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
 
 class ChatListViewController: UIViewController {
     private let cellId = "cellId"
@@ -31,6 +35,24 @@ class ChatListViewController: UIViewController {
         let vc = storyBord.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         self.present(vc, animated: true, completion: nil)
         
+        
+        fetchUserInfoFromFireStore()
+        
+    }
+    
+    private func fetchUserInfoFromFireStore() {
+        Firestore.firestore().collection("users").getDocuments { snapshots, error in
+            if let error = error {
+                print("user情報の取得に失敗しました。\(error)")
+                return
+            }
+            
+            //documentsは配列で来るからforEach
+            snapshots?.documents.forEach({ snapshot in
+                let data = snapshot.data()
+                print("data: ",data)
+            })
+        }
     }
 }
 
