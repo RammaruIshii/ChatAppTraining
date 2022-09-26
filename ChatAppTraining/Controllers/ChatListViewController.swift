@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class ChatListViewController: UIViewController {
     private let cellId = "cellId"
+    private var users = [User]()
     
     @IBOutlet weak var chatListTableView: UITableView!
     
@@ -55,8 +56,18 @@ class ChatListViewController: UIViewController {
             
             //documentsは配列で来るからforEach
             snapshots?.documents.forEach({ snapshot in
-                let data = snapshot.data()
-                print("data: ",data)
+                //dataをuserに変える
+//                let data = snapshot.data()
+                let dic = snapshot.data()
+                let user = User.init(dic: dic)
+                //ここでモデルUserに情報を保存している
+                self.users.append(user)
+                //実際にUserに保存できているか確認
+//                self.users.forEach({ user in
+//                    print(user.username)
+//                })
+                
+//                print("data: ",data)
             })
         }
     }
