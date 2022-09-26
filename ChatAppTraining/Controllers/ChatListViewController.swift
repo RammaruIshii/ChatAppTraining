@@ -31,11 +31,14 @@ class ChatListViewController: UIViewController {
         
         navigationItem.title = "トーク"
         
-        //起動時signUoVCをかぶせて出す
-        let storyBord = UIStoryboard(name: "SignUp", bundle: nil)
-        let vc = storyBord.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        //ログイン情報が端末に無い場合にアプリ起動時signupVCを表示
+        if Auth.auth().currentUser?.uid == nil {
+            //起動時signUoVCをかぶせて出す
+            let storyBord = UIStoryboard(name: "SignUp", bundle: nil)
+            let vc = storyBord.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
         
         //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくい
 //        fetchUserInfoFromFireStore()
@@ -60,9 +63,9 @@ class ChatListViewController: UIViewController {
 //                let data = snapshot.data()
                 let dic = snapshot.data()
                 let user = User.init(dic: dic)
-                //ここでモデルUserに情報を保存している
+                //ここでモデルUserに情報を保存している(端末にっていうことか？)
                 self.users.append(user)
-                //実際にUserに保存できているか確認
+                //実際にUserに保存できているか確認(端末にっていうことか？)
 //                self.users.forEach({ user in
 //                    print(user.username)
 //                })
