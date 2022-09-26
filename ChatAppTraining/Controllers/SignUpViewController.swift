@@ -70,6 +70,16 @@ class SignUpViewController: UIViewController {
             }
             
             print("FireStorageへの情報の保存に成功しました。")
+            storageRef.downloadURL { url, error in
+                if let error = error {
+                    print("FireStorageからのダウンロードに失敗しました。\(error)")
+                    return
+                }
+                
+                //urlをstringに変換
+                guard let urlString = url?.absoluteString else { return }
+                print("urlString:",urlString)
+            }
         }
 
     }
