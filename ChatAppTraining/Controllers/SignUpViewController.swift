@@ -52,6 +52,11 @@ class SignUpViewController: UIViewController {
     
     //コードでIBAction練習
     @objc private func tappedRegisterButton() {
+
+    }
+    
+    //FireStoredへ認証が通過したユーザー情報を保存
+    private func createUserToFirestore() {
         //email,passwordをAuthに保存
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
