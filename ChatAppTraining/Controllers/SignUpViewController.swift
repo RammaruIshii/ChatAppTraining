@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var profileImageButton: UIButton!
@@ -51,7 +52,25 @@ class SignUpViewController: UIViewController {
     }
     
     //コードでIBAction練習
+    //FireStoregeへプロフィール画像を保存する処理
     @objc private func tappedRegisterButton() {
+        guard let image = profileImageButton.imageView?.image else { return }
+        //画像データをJpegに変えて画像をデフォルトの状態で貼らないように0.3に設定
+        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
+        
+        //今回はファイルネームをこちらで任意に作って保存する
+        //生成される毎に変わる文字列
+        //クライアントからサーバにリクエストする際、任意のIDが必要となる場合など
+        let fileName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
+        storageRef.putData(uploadImage) { metadata, error in
+            if let error = error {
+                print("FireStorageへの情報の保存に失敗しました。\(error)")
+                return
+            }
+            
+            print("FireStorageへの情報の保存に成功しました。")
+        }
 
     }
     
