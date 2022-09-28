@@ -47,7 +47,7 @@ class ChatListViewController: UIViewController {
         }
         
         //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくいがここでreloadDataしなければcellが無限に増えてしまうため妥協
-        fetchUserInfoFromFireStore()
+//        fetchUserInfoFromFireStore()
         
     }
     
@@ -58,44 +58,12 @@ class ChatListViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //ここに書くとcellが何度もreloadDataしてしまい同じ内容のcellが何度もリロードされる
-//        fetchUserInfoFromFireStore()
-    }
-    
-    private func fetchUserInfoFromFireStore() {
-        Firestore.firestore().collection("users").getDocuments { snapshots, error in
-            if let error = error {
-                print("user情報の取得に失敗しました。\(error)")
-                return
-            }
-            
-            //documentsは配列で来るからforEach
-            snapshots?.documents.forEach({ snapshot in
-                //dataをuserに変える
-//                let data = snapshot.data()
-                let dic = snapshot.data()
-                let user = User.init(dic: dic)
-                //ここでself.usersにモデルUserの情報を保存している(端末にっていうことか？)
-                self.users.append(user)
-//                tableviewはreloaddataしなければcellが表示されない
-                self.chatListTableView.reloadData()
-                
-//                実際にUserに保存できているか確認(端末にっていうことか？)
-//                self.users.forEach({ user in
-//                    print(user.username)
-//                })
-                
-//                print("data: ",data)
-            })
-        }
-    }
 }
 
 extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return 0
+//        return users.count
 //        return 10
     }
     
@@ -103,7 +71,7 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
         //ChatlisttableVCellへアクセス
         //ここでユーザーの情報を渡す
         let cell = chatListTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatListTableViewCell
-        cell.user = users[indexPath.row]
+//        cell.user = users[indexPath.row]
         return cell
     }
     
