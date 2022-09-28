@@ -54,7 +54,8 @@ class ChatListViewController: UIViewController {
     @objc private func tappedNavRightBarButton() {
         let storyBoard = UIStoryboard.init(name: "UserList", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "UserListViewcontroller")
-        self.present(vc, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
