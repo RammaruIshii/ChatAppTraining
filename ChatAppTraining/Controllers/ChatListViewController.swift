@@ -13,12 +13,37 @@ import FirebaseAuth
 
 class ChatListViewController: UIViewController {
     private let cellId = "cellId"
-    private var users = [User]()
+    //fetchLoginUserInfoメソッドより、このuserに情報がセットされた時点でナヴィゲーションバーのタイトルをセットしたい
+    private var user: User? {
+        didSet {
+            navigationItem.title = user?.username
+        }
+    }
+    
     
     @IBOutlet weak var chatListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
+        //ログイン情報が端末に無い場合にアプリ起動時signupVCを表示
+        confirmLoggedInUser()
+        //現在ログインしているユーザー情報
+        fetchLoginUserInfo()
+        
+        //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくいがここでreloadDataしなければcellが無限に増えてしまうため妥協
+//        fetchUserInfoFromFireStore()
+        
+    }
+    
+    @objc private func tappedNavRightBarButton() {
+        let storyBoard = UIStoryboard.init(name: "UserList", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "UserListViewcontroller")
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    private func setUpViews() {
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
         let appearance = UINavigationBarAppearance()
@@ -34,10 +59,10 @@ class ChatListViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
         navigationItem.rightBarButtonItem = rightBarButton
         navigationItem.rightBarButtonItem?.tintColor = .white
-        
-  
-                
-        //ログイン情報が端末に無い場合にアプリ起動時signupVCを表示
+    }
+    
+    //ログイン情報が端末に無い場合にアプリ起動時signupVCを表示
+    private func confirmLoggedInUser() {
         if Auth.auth().currentUser?.uid == nil {
             //起動時signUoVCをかぶせて出す
             let storyBord = UIStoryboard(name: "SignUp", bundle: nil)
@@ -45,17 +70,21 @@ class ChatListViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
-        
-        //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくいがここでreloadDataしなければcellが無限に増えてしまうため妥協
-//        fetchUserInfoFromFireStore()
-        
     }
     
-    @objc private func tappedNavRightBarButton() {
-        let storyBoard = UIStoryboard.init(name: "UserList", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "UserListViewcontroller")
-        let nav = UINavigationController(rootViewController: vc)
-        self.present(nav, animated: true, completion: nil)
+    //現在ログインしているユーザーの情報を取得
+    private func fetchLoginUserInfo() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        //document(今ログインしている該当のユーザーを引っ張ってこれる)
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+            if let error = error {
+                print("ユーザー情報の取得に失敗しました\(error)")
+            }
+            guard let snapshot = snapshot else { return }
+            guard let dic = snapshot.data() else { return }
+            let user = User(dic: dic)
+            self.user = user
+        }
     }
     
 }
