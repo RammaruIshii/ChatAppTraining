@@ -19,12 +19,24 @@ class UserListViewcontroller: UIViewController {
     private var users = [User]()
     
     @IBOutlet weak var userListTableView: UITableView!
+    @IBOutlet weak var startChatButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userListTableView.delegate = self
         userListTableView.dataSource = self
+        
+        startChatButton.layer.cornerRadius = 10
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .rgb(red: 39, green: 49, blue: 69)
+        //タイトルの文字色変更
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
         //firestoreから読み取り、usersに保存し、リロードする処理
         fetchUserInfoFromFireStore()
         
