@@ -30,6 +30,12 @@ class ChatListViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         navigationItem.title = "トーク"
+        
+        let rightBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
+        navigationItem.rightBarButtonItem = rightBarButton
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        
+  
                 
         //ログイン情報が端末に無い場合にアプリ起動時signupVCを表示
         if Auth.auth().currentUser?.uid == nil {
@@ -42,8 +48,13 @@ class ChatListViewController: UIViewController {
         
         //ここに記述するとfirestoreへ情報の保存に成功した際、コンソール画面にて成功文言の上にコンソール内容が書かれてしまうため見にくいがここでreloadDataしなければcellが無限に増えてしまうため妥協
         fetchUserInfoFromFireStore()
-
         
+    }
+    
+    @objc private func tappedNavRightBarButton() {
+        let storyBoard = UIStoryboard.init(name: "UserList", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "UserListViewcontroller")
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
