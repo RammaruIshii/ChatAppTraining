@@ -61,6 +61,7 @@ class UserListViewcontroller: UIViewController {
 //                let data = snapshot.data()
                 let dic = snapshot.data()
                 let user = User.init(dic: dic)
+                user.uid = snapshot.documentID
                 
                 //今ログインしているユーザーの情報を表示したくない
                 guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -85,7 +86,27 @@ class UserListViewcontroller: UIViewController {
     }
     
     @objc func tappedStartChatButton() {
-        print("tappedStartChatButton")
+        //現在の使っているユーザーのUid?
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let partnerUid = self.selectedUser?.uid else { return }
+        
+        let members = [uid, partnerUid]
+        
+        let docData: [String: Any] = [
+            "members": members,
+            "latestMessageId": "",
+            "createdAt": Timestamp()
+        ]
+        
+        //FireStoreに情報を保存
+        Firestore.firestore().collection("ChatRooms").addDocument(data: docData) { error in
+            if let error = error {
+                print("ChatRoom情報の保存に失敗しました。\(error)")
+                return
+            }
+            
+            print("ChatRoom情報の保存に成功しました。")
+        }
         
     }
     

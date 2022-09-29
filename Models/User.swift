@@ -19,6 +19,8 @@ class User {
     let profileImageUrl: String
     let createdAt: Timestamp
     
+    var uid: String?
+    
     //コンソール情報を見るとdictionaryになっているため
     //[String: Any]で一つの型、そのため、Stringをキーにしてデータはどんな型でも入れられる
     init(dic: [String: Any]) {
