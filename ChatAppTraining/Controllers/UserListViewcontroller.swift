@@ -18,6 +18,8 @@ class UserListViewcontroller: UIViewController {
     //この書き方調べる
     private var users = [User]()
     
+    private var selectedUser: User?
+    
     @IBOutlet weak var userListTableView: UITableView!
     @IBOutlet weak var startChatButton: UIButton!
     
@@ -28,6 +30,8 @@ class UserListViewcontroller: UIViewController {
         userListTableView.dataSource = self
         
         startChatButton.layer.cornerRadius = 10
+        startChatButton.isEnabled = false
+        startChatButton.addTarget(self, action: #selector(tappedStartChatButton), for: .touchUpInside)
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -80,6 +84,11 @@ class UserListViewcontroller: UIViewController {
         }
     }
     
+    @objc func tappedStartChatButton() {
+        print("tappedStartChatButton")
+        
+    }
+    
 }
 
 extension UserListViewcontroller: UITableViewDelegate, UITableViewDataSource {
@@ -92,6 +101,13 @@ extension UserListViewcontroller: UITableViewDelegate, UITableViewDataSource {
         let cell = userListTableView.dequeueReusableCell(withIdentifier: UserListcellId, for: indexPath) as! UserListTableViewCell
         cell.user = users[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        startChatButton.isEnabled = true
+        let user = users[indexPath.row]
+        //rowを選択して引っ張ってきた情報（ユーザー）をselectedUserに入れる
+        self.selectedUser = user
     }
 }
 
